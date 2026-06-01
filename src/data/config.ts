@@ -3,6 +3,7 @@ export const parish = {
   city: 'Campina Grande — PB',
   address: 'Rua [ENDEREÇO OFICIAL], Campina Grande — PB',
   officeHours: 'Seg–Sex, 14h–18h',
+  crest: '/brasao-paroquia.svg',
   whatsapp: '5583999999999', // troque aqui
   email: 'santissimatrindade.cg@example.com', // troque aqui
   socials: {
@@ -14,30 +15,67 @@ export const parish = {
   mapQuery: 'Paróquia Santíssima Trindade Campina Grande',
 }
 
+export const pastor = {
+  name: 'Pe. José Jorge Rodrigues',
+  role: 'Pároco',
+  since: 'Pároco desde 2020',
+  bio: 'Breve resumo biográfico será inserido posteriormente.',
+}
+
 export const masses = [
-  { day: 'Domingo', times: ['07h', '10h', '18h'] },
-  { day: 'Quarta', times: ['19h'] },
-  { day: 'Sábado', times: ['19h'] },
+  { day: 'Segunda a sexta-feira', times: ['12h00'] },
+  { day: 'Quinta-feira', times: ['19h30'] },
+  { day: 'Sábado', times: ['17h00'] },
+  { day: 'Domingo', times: ['09h00', '11h00', '16h30', '19h30'] },
 ]
 
 export const activities = [
-  { name: 'Confissões', detail: 'Sexta, 17h — 19h' },
-  { name: 'Adoração', detail: 'Segunda, 18h' },
-  { name: 'Terço', detail: 'Terça, 19h' },
-  { name: 'Grupo de Oração', detail: 'Quinta, 19h' },
+  { day: 'Segunda-feira', items: ['19h30 – Terço dos Homens'] },
+  { day: 'Quarta-feira', items: ['15h00 – Atendimento de Confissões (mediante agendamento)'] },
+  {
+    day: 'Quinta-feira Eucarística',
+    items: [
+      '15h00 – Atendimento de Confissões (mediante agendamento) e Exposição do Santíssimo Sacramento',
+      '19h00 – Santo Terço',
+      '19h30 – Santa Missa, seguida de Adoração e Bênção do Santíssimo Sacramento',
+    ],
+  },
+  { day: 'Sábado', items: ['09h00 – Ofício da Imaculada Conceição', '10h30 – Batizados'] },
 ]
 
-export const ministries = [
-  { title: 'Liturgia', desc: 'Equipe de leitura, acólitos e ministros extraordinários.', info: 'Encontros: sábados, 16h.' },
-  { title: 'Catequese', desc: 'Formação para crianças, jovens e adultos.', info: 'Inscrições abertas — secretaria paroquial.' },
-  { title: 'Música', desc: 'Ministérios musicais e corais nas celebrações.', info: 'Ensaios: a combinar por grupo.' },
-  { title: 'Juventude', desc: 'Crescimento na fé e missão com jovens.', info: 'Encontros: sábados, 17h.' },
-  { title: 'Caridade', desc: 'Ações sociais e assistência a famílias.', info: 'Doações na secretaria.' },
-  { title: 'Famílias', desc: 'Acolhimento, encontros e acompanhamento.', info: 'Mensal — último domingo.' },
+export type Ministry = {
+  title: string
+  coordinator: string
+  desc?: string
+}
+
+export const ministries: Ministry[] = []
+
+export type Community = {
+  name: string
+  address: string
+  mapQuery: string
+  responsible: string
+  massTimes: string[]
+}
+
+export const communities: Community[] = []
+
+export const news = [
+  {
+    date: 'Em breve',
+    category: 'Avisos paroquiais',
+    title: 'Espaço de atualidades',
+    text: 'Área preparada para notícias, avisos e comunicados oficiais da Paróquia Santíssima Trindade.',
+  },
 ]
 
-export const events = [
-  { date: 'SET 05, 19h', title: 'Novenário da Santíssima Trindade', text: 'Celebrações diárias, quermesse e momentos de adoração.' },
-  { date: 'SET 14, 08h', title: 'Retiro dos Ministérios', text: 'Dia de espiritualidade para agentes pastorais.' },
-  { date: 'OUT 02, 19h', title: 'Formação para Catequistas', text: 'Encontro com temas de catequese e liturgia.' },
+export const agenda = [
+  {
+    date: 'Em breve',
+    title: 'Calendário paroquial',
+    time: 'A definir',
+    location: 'Paróquia Santíssima Trindade',
+    text: 'Espaço preparado para divulgar eventos, celebrações especiais e atividades da paróquia.',
+  },
 ]
