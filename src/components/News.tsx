@@ -1,21 +1,24 @@
 import { news } from '../data/config'
+import SectionHeader from './SectionHeader'
 
 export default function News(){
   return (
-    <section id="atualidades" className="py-16 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <h2 className="text-3xl font-extrabold tracking-tight">Atualidades</h2>
-          <p className="mt-2 text-slate-600">Notícias, avisos e comunicados paroquiais em um espaço próprio.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="atualidades" className="section-pad bg-white/70">
+      <div className="section-shell">
+        <SectionHeader
+          align="center"
+          eyebrow="Atualidades"
+          title="Avisos e comunicados paroquiais"
+          text="Um espaço simples para publicar notícias, comunicados, formações e orientações da vida paroquial."
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {news.map((item)=> (
-            <article key={item.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-wide text-blue-700">
+            <article key={item.title} className="soft-card rounded-3xl p-6">
+              <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">
                 <span>{item.category}</span>
                 <span>{item.date}</span>
               </div>
-              <h3 className="mt-4 text-xl font-bold">{item.title}</h3>
+              <h3 className="mt-5 text-2xl font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
             </article>
           ))}

@@ -1,35 +1,40 @@
 import { parish } from '../data/config'
+import SectionHeader from './SectionHeader'
+import { Mail, Phone } from 'lucide-react'
 
 export default function Contact(){
   return (
-    <section id="contato" className="py-16 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <h2 className="text-3xl font-extrabold tracking-tight">Contato</h2>
-          <p className="mt-2 text-slate-600">Fale conosco pelos canais abaixo.</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-            <h3 className="font-bold">WhatsApp</h3>
+    <section id="contato" className="section-pad">
+      <div className="section-shell">
+        <SectionHeader
+          align="center"
+          eyebrow="Contato"
+          title="Fale com a secretaria paroquial"
+          text="Canais para atendimento, orientações sobre sacramentos, agendamentos, pastorais e informações gerais."
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="soft-card rounded-3xl p-6">
+            <Phone className="text-[var(--gold)]" size={24}/>
+            <h3 className="mt-4 text-2xl font-semibold">Telefone</h3>
             <p className="mt-2 text-slate-600">Atendimento paroquial</p>
-            <a href={`https://wa.me/${parish.whatsapp}`} className="mt-3 inline-flex rounded-2xl bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-700 shadow">Enviar mensagem</a>
-            <p className="mt-2 text-xs text-slate-500">Troque pelo número oficial.</p>
+            <a href={`tel:+${parish.phone}`} className="mt-4 inline-flex font-semibold text-[var(--blue)]">{parish.phoneLabel}</a>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-            <h3 className="font-bold">E-mail</h3>
-            <p className="mt-2 text-slate-600">Secretaria & pedidos</p>
-            <a href={`mailto:${parish.email}`} className="mt-3 inline-flex rounded-2xl bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 shadow">Enviar e-mail</a>
-            <p className="mt-2 text-xs text-slate-500">Troque pelo e-mail oficial.</p>
+          <div className="soft-card rounded-3xl p-6">
+            <Mail className="text-[var(--gold)]" size={24}/>
+            <h3 className="mt-4 text-2xl font-semibold">E-mail</h3>
+            <p className="mt-2 text-slate-600">Secretaria e pedidos</p>
+            <a href={`mailto:${parish.email}`} className="mt-4 inline-flex font-semibold text-[var(--blue)]">{parish.email}</a>
+            <p className="mt-2 text-xs text-slate-500">E-mail oficial pendente de confirmação.</p>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-            <h3 className="font-bold">Redes sociais</h3>
+          <div className="soft-card rounded-3xl p-6">
+            <h3 className="text-2xl font-semibold">Redes sociais</h3>
             <p className="mt-2 text-slate-600">Acompanhe avisos e transmissões.</p>
-            <div className="mt-3 flex flex-wrap gap-3">
-              <a href={parish.socials.instagram} className="inline-flex rounded-2xl bg-slate-900 px-4 py-2 font-semibold text-white hover:bg-slate-800 shadow">Instagram</a>
-              <a href={parish.socials.youtube} className="inline-flex rounded-2xl bg-red-600 px-4 py-2 font-semibold text-white hover:bg-red-700 shadow">YouTube</a>
-              <a href={parish.socials.facebook} className="inline-flex rounded-2xl bg-blue-700 px-4 py-2 font-semibold text-white hover:bg-blue-800 shadow">Facebook</a>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a href={parish.socials.instagram} className="rounded-full bg-[var(--ivory)] px-4 py-2 text-sm font-semibold text-[var(--blue)] ring-1 ring-black/5">Instagram</a>
+              <a href={parish.socials.youtube} className="rounded-full bg-[var(--ivory)] px-4 py-2 text-sm font-semibold text-[var(--blue)] ring-1 ring-black/5">YouTube</a>
+              <a href={parish.socials.facebook} className="rounded-full bg-[var(--ivory)] px-4 py-2 text-sm font-semibold text-[var(--blue)] ring-1 ring-black/5">Facebook</a>
             </div>
-            <p className="mt-2 text-xs text-slate-500">Insira os links oficiais.</p>
+            <p className="mt-4 text-xs text-slate-500">Links oficiais pendentes de confirmação.</p>
           </div>
         </div>
       </div>

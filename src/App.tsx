@@ -16,7 +16,7 @@ import FloatingWhats from './components/FloatingWhats'
 
 export default function App(){
   return (
-    <div className="text-slate-800">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar/>
       <Hero/>
       <About/>

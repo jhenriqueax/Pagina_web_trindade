@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { parish } from '../data/config'
-import { Menu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const links = [
+  { id: 'inicio', label: 'Início' },
   { id: 'sobre', label: 'Sobre' },
   { id: 'paroco', label: 'Pároco' },
   { id: 'horarios', label: 'Horários' },
@@ -12,37 +13,39 @@ const links = [
   { id: 'agenda', label: 'Agenda' },
   { id: 'local', label: 'Localização' },
   { id: 'dizimo', label: 'Dízimo' },
+  { id: 'contato', label: 'Contato' },
 ]
 
 export default function Navbar(){
   const [open, setOpen] = useState(false)
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-3 mb-2 flex items-center justify-between rounded-2xl bg-white/85 backdrop-blur shadow-md px-4 py-3">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0d2345]/95 backdrop-blur-xl">
+      <div className="section-shell">
+        <div className="flex items-center justify-between py-3">
           <a href="#inicio" className="flex items-center gap-3 group">
-            <img src={parish.crest} alt="Brasão da Paróquia Santíssima Trindade" className="h-11 w-11 object-contain" />
+            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 p-1 shadow-sm">
+              <img src={parish.crest} alt="Brasão da Paróquia Santíssima Trindade" className="h-full w-full object-contain" />
+            </span>
             <div className="leading-tight">
-              <div className="font-extrabold tracking-tight">Santíssima Trindade</div>
-              <div className="text-xs text-slate-500">{parish.city}</div>
+              <div className="font-semibold tracking-tight text-white">Santíssima Trindade</div>
+              <div className="text-xs uppercase tracking-[0.24em] text-[var(--gold-soft)]">{parish.city}</div>
             </div>
           </a>
-          <nav className="hidden lg:flex items-center gap-4 text-sm font-medium">
-            {links.map((link)=> <a key={link.id} href={`#${link.id}`} className="hover:text-blue-700">{link.label}</a>)}
-            <a href="#doacoes" className="inline-flex items-center rounded-xl bg-yellow-400/90 px-3 py-2 text-slate-900 hover:bg-yellow-400 shadow">Doações</a>
+          <nav className="hidden xl:flex items-center gap-5 text-sm font-medium text-white/80">
+            {links.map((link)=> <a key={link.id} href={`#${link.id}`} className="transition hover:text-[var(--gold-soft)]">{link.label}</a>)}
+            <a href="#doacoes" className="rounded-full bg-[var(--gold)] px-4 py-2 font-semibold text-[var(--blue-deep)] transition hover:bg-[var(--gold-soft)]">Doações</a>
           </nav>
-          <button className="lg:hidden inline-flex items-center justify-center rounded-xl border border-slate-200 p-2 hover:bg-white" aria-label="Abrir menu" onClick={()=>setOpen((o)=>!o)}>
-            <Menu size={22}/>
+          <button className="xl:hidden inline-flex items-center justify-center rounded-full border border-white/15 p-2 text-white hover:bg-white/10" aria-label="Abrir menu" onClick={()=>setOpen((o)=>!o)}>
+            {open ? <X size={22}/> : <Menu size={22}/>}
           </button>
         </div>
       </div>
       {open && (
-        <div className="lg:hidden">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="bg-white/85 backdrop-blur rounded-2xl shadow px-6 py-4 mb-2 text-sm font-medium grid grid-cols-1 gap-3">
+        <div className="xl:hidden border-t border-white/10 bg-[var(--blue-deep)]">
+          <div className="section-shell">
+            <div className="grid grid-cols-1 gap-3 py-5 text-sm font-medium text-white/85 sm:grid-cols-2">
               {links.map((link)=> <a key={link.id} href={`#${link.id}`} onClick={()=>setOpen(false)} className="hover:text-blue-700">{link.label}</a>)}
-              <a href="#contato" onClick={()=>setOpen(false)} className="hover:text-blue-700">Contato</a>
-              <a href="#doacoes" onClick={()=>setOpen(false)} className="hover:text-blue-700">Doações</a>
+              <a href="#doacoes" onClick={()=>setOpen(false)} className="font-semibold text-[var(--gold-soft)]">Doações</a>
             </div>
           </div>
         </div>
