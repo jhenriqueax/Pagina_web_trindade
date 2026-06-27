@@ -1,5 +1,6 @@
 import { ministries, ministriesPendingInfo } from '../data/config'
 import SectionHeader from './SectionHeader'
+import { ChevronDown, Phone } from 'lucide-react'
 
 export default function Ministries(){
   return (
@@ -7,21 +8,34 @@ export default function Ministries(){
       <div className="section-shell">
         <SectionHeader
           align="center"
-          eyebrow="Pastorais"
-          title="Serviço, oração e evangelização"
-          text="Relação das pastorais, grupos e movimentos com seus coordenadores ou responsáveis, conforme o material enviado."
+          eyebrow="Serviços Pastorais"
+          title="Pastorais, grupos e movimentos"
+          text="Cards expansíveis com os coordenadores e telefones enviados no material. Toque em uma pastoral para ver os contatos."
         />
-        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {ministries.map((m, index)=>(
-            <article key={m.title} className="soft-card rounded-3xl p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--gold)]">{String(index + 1).padStart(2, '0')}</p>
-              <h3 className="mt-3 text-2xl font-semibold leading-tight">{m.title}</h3>
-              {m.desc && <p className="mt-2 text-sm leading-6 text-slate-600">{m.desc}</p>}
-              <div className="mt-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">Responsáveis</p>
-                <p className="mt-2 text-sm leading-6 text-slate-700">{m.coordinators.join(', ')}</p>
+            <details key={m.title} className="group soft-card rounded-3xl p-5 open:bg-white">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+                <span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--gold)]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="mt-3 block text-2xl font-semibold leading-tight" style={{fontFamily: '"Cormorant Garamond", Georgia, serif'}}>{m.title}</span>
+                  {m.desc && <span className="mt-2 block text-sm leading-6 text-slate-600">{m.desc}</span>}
+                  <span className="mt-3 block text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">{m.coordinators.length} contato{m.coordinators.length > 1 ? 's' : ''}</span>
+                </span>
+                <ChevronDown className="mt-1 shrink-0 text-[var(--gold)] transition group-open:rotate-180" size={20}/>
+              </summary>
+              <div className="mt-5 space-y-3 border-t border-black/10 pt-5">
+                {m.coordinators.map((coordinator)=> (
+                  <div key={`${m.title}-${coordinator.name}-${coordinator.phone}`} className="rounded-2xl bg-[var(--ivory)] p-4 ring-1 ring-black/5">
+                    <p className="text-sm font-semibold text-slate-900">{coordinator.name}</p>
+                    <a href={`tel:${coordinator.phone.replace(/[^0-9+]/g, '')}`} className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)]">
+                      <Phone size={15}/>
+                      {coordinator.phone}
+                    </a>
+                  </div>
+                ))}
               </div>
-            </article>
+            </details>
           ))}
         </div>
         {ministriesPendingInfo.length > 0 && (

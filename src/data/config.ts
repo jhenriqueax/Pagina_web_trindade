@@ -60,106 +60,158 @@ export const activities = [
 
 export type Ministry = {
   title: string
-  coordinators: string[]
+  coordinators: Array<{
+    name: string
+    phone: string
+  }>
   desc?: string
 }
 
 export const ministries: Ministry[] = [
   {
     title: 'Pastoral da Comunicação - PASCOM',
-    coordinators: ['Hilma Paula de Araújo Ribeiro'],
+    coordinators: [{ name: 'Hilma Paula de Araújo Ribeiro', phone: '(83) 99859-4337' }],
     desc: 'Comunicação paroquial, registros e divulgação das ações da comunidade.',
   },
   {
     title: 'Ministério dos Coroinhas',
-    coordinators: ['Cláudia Virgínia Diniz Lima', 'Alessandro de Lima', 'Mharya Clara Lucena'],
+    coordinators: [
+      { name: 'Cláudia Virgínia Diniz Lima', phone: '(83) 99997-0541' },
+      { name: 'Alessandro de Lima', phone: '(83) 98619-7304' },
+      { name: 'Mharya Clara Lucena', phone: '(83) 99879-9724' },
+    ],
   },
   {
     title: 'Pastoral Litúrgica',
-    coordinators: ['Janaina Oliveira Cavalcanti', 'Maria Clara Jucá'],
+    coordinators: [
+      { name: 'Janaina Oliveira Cavalcanti', phone: '(83) 99605-9207' },
+      { name: 'Maria Clara Jucá', phone: '(83) 98724-0203' },
+    ],
   },
   {
     title: 'Paraliturgia',
-    coordinators: ['Wener Glauco', 'Ana Carolina', 'Larissa Furtado Campos', 'Thales Pereira de Lacerda'],
+    coordinators: [
+      { name: 'Wener Glauco', phone: '(83) 99824-5824' },
+      { name: 'Ana Carolina', phone: '(83) 98840-8412' },
+      { name: 'Larissa Furtado Campos', phone: '(83) 98807-1780' },
+      { name: 'Thales Pereira de Lacerda', phone: '(83) 98680-5468' },
+    ],
   },
   {
     title: 'Apostolado da Oração',
-    coordinators: ['Hannah Leite Sagrado', 'Marizete Hilário'],
+    coordinators: [
+      { name: 'Hannah Leite Sagrado', phone: '(83) 99123-1575' },
+      { name: 'Marizete Hilário', phone: '(83) 99819-7344' },
+    ],
   },
   {
     title: 'Núcleo do EJC',
     coordinators: [
-      'Ana Beatriz Gomes',
-      'Felipe Abrantes',
-      'Hugo Augusto',
-      'Mariana Maciel',
-      'Maria Luísa Freitas',
-      'Andrezza e João Paulo',
-      'Dayane e Thiago',
-      'Isanna e Igor',
+      { name: 'Ana Beatriz Gomes', phone: '(83) 98609-6799' },
+      { name: 'Felipe Abrantes', phone: '(83) 98674-1547' },
+      { name: 'Hugo Augusto', phone: '(83) 99310-1280' },
+      { name: 'Mariana Maciel', phone: '(83) 98831-3690' },
+      { name: 'Maria Luísa Freitas', phone: '(83) 99919-1590' },
+      { name: 'Andrezza e João Paulo', phone: '(83) 98736-2909 / (83) 98736-9626' },
+      { name: 'Dayane e Thiago', phone: '(83) 98819-4336 / (83) 98871-5912' },
+      { name: 'Isanna e Igor', phone: '(83) 99993-5025 / (83) 98886-8038' },
     ],
   },
   {
     title: 'Pastoral do Batismo',
     coordinators: [
-      'Ana Paula Duarte Cavalcanti',
-      'Leonardo Lívio Rodrigues e Silva',
-      'Amanda Carolina Freitas de Lira',
-      'Yunes Yuri Lemos Nunes',
-      'Laís Mayanny Costa de Souza',
+      { name: 'Ana Paula Duarte Cavalcanti', phone: '(83) 99634-9909' },
+      { name: 'Leonardo Lívio Rodrigues e Silva', phone: '(83) 98768-7213' },
+      { name: 'Amanda Carolina Freitas de Lira', phone: '(83) 99936-1611' },
+      { name: 'Yunes Yuri Lemos Nunes', phone: '(83) 98864-3559' },
+      { name: 'Laís Mayanny Costa de Souza', phone: '(83) 98782-3635' },
     ],
   },
   {
     title: 'Pastoral do Dízimo',
-    coordinators: ['Ana Fábia Almeida Lago', 'André Luís Barbosa Lago'],
+    coordinators: [
+      { name: 'Ana Fábia Almeida Lago', phone: '(83) 99951-0645' },
+      { name: 'André Luís Barbosa Lago', phone: '(83) 99986-2600' },
+    ],
   },
   {
     title: 'Pastoral Familiar',
-    coordinators: ['Diácono Manassés', 'Dona Paula', 'Karol', 'William', 'Juliana', 'Eduardo', 'Arabela', 'Eduardo'],
+    coordinators: [
+      { name: 'Diácono Manassés', phone: '(83) 9971-2877' },
+      { name: 'Dona Paula', phone: '(83) 8730-9904' },
+      { name: 'Karol', phone: '(83) 99679-2479' },
+      { name: 'William', phone: '(83) 99639-7609' },
+      { name: 'Juliana', phone: '(83) 8851-9414' },
+      { name: 'Eduardo', phone: '(83) 9657-4339' },
+      { name: 'Arabela', phone: '(83) 9806-4444' },
+      { name: 'Eduardo', phone: '(83) 8800-3037' },
+    ],
   },
   {
     title: 'Canto',
-    coordinators: ['Guilherme Andrade', 'Felipe', 'Glaucia'],
+    coordinators: [
+      { name: 'Guilherme Andrade', phone: '(83) 99192-8949' },
+      { name: 'Felipe', phone: '(83) 9982-4196' },
+      { name: 'Glaucia', phone: '(83) 98888-5335' },
+    ],
   },
   {
     title: 'Acolhida',
-    coordinators: ['Tayse Sousa', 'Aelson Junior', 'Paulo Roberto', 'Rachel Ramalho', 'Lígia Danusia', 'Igor Albuquerque'],
+    coordinators: [
+      { name: 'Tayse Sousa', phone: '(83) 99860-4143' },
+      { name: 'Aelson Junior', phone: '(83) 99137-2504' },
+      { name: 'Paulo Roberto', phone: '(83) 99961-05810' },
+      { name: 'Rachel Ramalho', phone: '(83) 98151-0046' },
+      { name: 'Lígia Danusia', phone: '(83) 99910-2242' },
+      { name: 'Igor Albuquerque', phone: '(83) 99639-7045' },
+    ],
   },
   {
     title: 'ECC',
     coordinators: [
-      'Carlos Apolinário',
-      'Jéssika Mendonça',
-      'Germano Medeiros',
-      'Gyselly Farias Costa',
-      'Millena Cavalcanti',
-      'Guilherme Ramalho',
-      'Hermana Caroline',
-      'Daniel Oliveira',
-      'Charles Barbosa',
-      'Raphaella Ricarte',
+      { name: 'Carlos Apolinário', phone: '(83) 99409-4133' },
+      { name: 'Jéssika Mendonça', phone: '(83) 99365-2914' },
+      { name: 'Germano Medeiros', phone: '(83) 98852-8752' },
+      { name: 'Gyselly Farias Costa', phone: '(83) 99913-1133' },
+      { name: 'Millena Cavalcanti', phone: '(83) 99983-7306' },
+      { name: 'Guilherme Ramalho', phone: '(83) 99922-0030' },
+      { name: 'Hermana Caroline', phone: '(83) 99628-9000' },
+      { name: 'Daniel Oliveira', phone: '(84) 99831-3333' },
+      { name: 'Charles Barbosa', phone: '(83) 99636-7705' },
+      { name: 'Raphaella Ricarte', phone: '(83) 98818-5426' },
     ],
   },
   {
     title: 'Catequese',
     coordinators: [
-      'Amanda Kelly de Sousa Costa',
-      'Sara Maria Cruz da Costa',
-      'Rafaele Sarmento Carvalho Fernandes',
-      'Daniel Maia Oliveira Fernandes',
+      { name: 'Amanda Kelly de Sousa Costa', phone: '(83) 99903-7980' },
+      { name: 'Sara Maria Cruz da Costa', phone: '(83) 99628-6368' },
+      { name: 'Rafaele Sarmento Carvalho Fernandes', phone: '(83) 98808-7409' },
+      { name: 'Daniel Maia Oliveira Fernandes', phone: '(83) 98802-0500' },
     ],
   },
   {
     title: 'Terço dos Homens',
-    coordinators: ['Severino do Ramo Ventura', 'Éder José Guedes Abreu', 'Mário Sérgio Lima de Oliveira'],
+    coordinators: [
+      { name: 'Severino do Ramo Ventura', phone: '(83) 98608-8068' },
+      { name: 'Éder José Guedes Abreu', phone: '(83) 99865-2966' },
+      { name: 'Mário Sérgio Lima de Oliveira', phone: '(83) 98786-1314' },
+    ],
   },
   {
     title: 'MESCE',
-    coordinators: ['Lígia Almeida', 'Marcos'],
+    coordinators: [
+      { name: 'Lígia Almeida', phone: '(83) 99352-3254' },
+      { name: 'Marcos', phone: '(83) 98841-9912' },
+    ],
   },
   {
     title: 'OVS',
-    coordinators: ['Arthur', 'Lígia Almeida', 'Roncaly'],
+    coordinators: [
+      { name: 'Arthur', phone: '(83) 99664-8477' },
+      { name: 'Lígia Almeida', phone: '(83) 99352-3254' },
+      { name: 'Roncaly', phone: '(83) 98816-7070' },
+    ],
   },
 ]
 
@@ -183,34 +235,3 @@ export type Community = {
 }
 
 export const communities: Community[] = []
-
-export const news = [
-  {
-    date: 'Em breve',
-    category: 'Comunicados',
-    title: 'Avisos paroquiais',
-    text: 'Área preparada para notícias, comunicados e orientações oficiais da Paróquia Santíssima Trindade.',
-  },
-  {
-    date: 'Em breve',
-    category: 'Formação',
-    title: 'Encontros e formações',
-    text: 'Espaço para divulgar catequeses, encontros pastorais, retiros e momentos de espiritualidade.',
-  },
-  {
-    date: 'Em breve',
-    category: 'Celebrações',
-    title: 'Celebrações especiais',
-    text: 'Área para solenidades, festas, novenas e programações extraordinárias da comunidade.',
-  },
-]
-
-export const agenda = [
-  {
-    date: 'Em breve',
-    title: 'Calendário paroquial',
-    time: 'A definir',
-    location: 'Paróquia Santíssima Trindade',
-    text: 'Espaço preparado para divulgar eventos, celebrações especiais e atividades da paróquia.',
-  },
-]

@@ -7,12 +7,9 @@ const links = [
   { id: 'sobre', label: 'Sobre' },
   { id: 'paroco', label: 'Pároco' },
   { id: 'horarios', label: 'Horários' },
-  { id: 'ministerios', label: 'Pastorais' },
+  { id: 'ministerios', label: 'Serviços' },
   { id: 'comunidades', label: 'Comunidades' },
-  { id: 'atualidades', label: 'Atualidades' },
-  { id: 'agenda', label: 'Agenda' },
   { id: 'local', label: 'Localização' },
-  { id: 'dizimo', label: 'Dízimo' },
   { id: 'contato', label: 'Contato' },
 ]
 
